@@ -5,7 +5,17 @@
     font-size: 2rem;
 }
 
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .kategori {
     background-color: brown;
-    
+    width: 300px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
