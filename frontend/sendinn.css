@@ -92,8 +92,15 @@ img {
 .liste {
     display: flex;
     flex-direction: row;
+    margin-left: 5px;
+    gap: 0.5rem;
 }
 
 .skriv {
-padding: 20px;
+margin-left: 5px;
+margin-bottom: 20px;
+}
+
+.regnummer {
+margin-left: 5px;
 }
