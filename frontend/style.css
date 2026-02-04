@@ -1,13 +1,23 @@
 .navbar_cont {
     background-color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar a{
     height: 3rem;
     color: white;
 }
 
 .navbar a{
-    display: flex;
-    justify-content: center;
     height: 3rem;
+}
+
+img {
+    display: flex;
+    justify-content: left;
+    width: 10rem;
+    height: 2rem;
 }
 
 .search_bar {
