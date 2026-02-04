@@ -1,7 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    flex-wrap: wrap;
+}
+
 .navbar_cont {
     background-color: red;
     display: flex;
-    justify-content: center;
+    height: 6rem;
+    align-items: center;
+}
+
+.navbar_cont img {
+    margin-left: 2rem;
 }
 
 .navbar a{
@@ -10,7 +24,11 @@
 }
 
 .navbar a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     height: 3rem;
+    color: white;
 }
 
 img {
@@ -22,5 +40,13 @@ img {
 
 .search_bar {
     display: flex;
+    height: 2rem;
+    margin-top: 2rem;
     justify-content: center;
+}
+
+input {
+    width: 600px;
+    height: 30px;
+    font-size: 30px;
 }
