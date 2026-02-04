@@ -71,3 +71,8 @@ input {
     color: white;
     border-radius: 2rem;
 }
+
+.liste h1{
+    display: flex;
+    justify-content: center;
+}
