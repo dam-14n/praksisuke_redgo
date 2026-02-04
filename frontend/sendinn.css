@@ -28,3 +28,17 @@
     width: 700px;
     height: 700px;
 }
+
+.dyr {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 25px;
+    background-color: white;
+    border: 2px black;
+}
+
+.dyr p {
+    margin-left: 20px;
+    outline: #4CAF50 solid 10px;
+}
