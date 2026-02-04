@@ -3,10 +3,6 @@ body {
     padding: 0;
 }
 
-.navbar {
-    flex-wrap: wrap;
-}
-
 .navbar_cont {
     background-color: red;
     display: flex;
@@ -18,17 +14,10 @@ body {
     margin-left: 2rem;
 }
 
-.navbar a{
-    height: 3rem;
+.navbar a {
     color: white;
-}
-
-.navbar a{
+    text-decoration: none;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 3rem;
-    color: white;
 }
 
 img {
@@ -49,4 +38,9 @@ input {
     width: 600px;
     height: 30px;
     font-size: 30px;
+}
+
+.navbar {
+    display: flex;
+    gap: 2rem;
 }
