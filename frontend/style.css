@@ -44,3 +44,30 @@ input {
     display: flex;
     gap: 2rem;
 }
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    font-size: 20px;
+}
+
+.box_cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.liste {
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    background-color: gray;
+    width: 67%;
+    color: white;
+    border-radius: 2rem;
+}
