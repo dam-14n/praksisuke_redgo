@@ -1,3 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar_cont {
+    background-color: red;
+    display: flex;
+    height: 6rem;
+    align-items: center;
+}
+ 
+.navbar_cont img {
+    margin-left: 2rem;
+}
+ 
+.navbar a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+}
+ 
+img {
+    display: flex;
+    justify-content: left;
+    width: 10rem;
+    height: 2rem;
+}
+
+.navbar {
+    display: flex;
+    gap: 2rem;
+}
+ 
+.nav {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    font-size: 20px;
+}
+ 
 .overskrift {
     display: flex;
     align-items: center;
@@ -29,7 +71,7 @@
     height: 700px;
 }
 
-.dyr {
+.knapp {
     margin-top: 20px;
     margin-left: 15px;
     margin-right: 30px;
@@ -39,10 +81,19 @@
     outline: #000000 solid 5px;
 }
 
-.dyr summary {
+.knapp summary {
     margin-left: 20px;
 }
 
-.dyr:hover {
+.knapp:hover {
   background-color: rgb(233, 233, 233);
+}
+
+.liste {
+    display: flex;
+    flex-direction: row;
+}
+
+.skriv {
+padding: 20px;
 }
