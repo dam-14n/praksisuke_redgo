@@ -4,7 +4,7 @@ body {
 }
 
 .navbar_cont {
-    background-color: red;
+    background-color:#EA3C3A;
     display: flex;
     height: 6rem;
     align-items: center;
@@ -72,7 +72,6 @@ input {
     border-radius: 2rem;
 }
 
-.liste h1{
+tr {
     display: flex;
-    justify-content: center;
 }
