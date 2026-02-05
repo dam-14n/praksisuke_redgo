@@ -56,7 +56,19 @@ img {
 }
 
 .box {
-    background-color: gray;
+    background-color: rgb(189, 189, 189);
     width: 700px;
     height: 700px;
+}
+
+.rød {
+    color: red;
+}
+
+.kontaktinfo {
+    font-size: larger;
+}
+
+.veihjelp {
+    font-size: 1.5rem;
 }
