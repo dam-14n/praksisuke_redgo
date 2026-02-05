@@ -109,3 +109,8 @@ tr:nth-child(even) {
 .overskrift {
     margin-left: 286px;
 }
+
+.innmeld a{
+    text-decoration: none;
+    color: white;
+}
