@@ -12,8 +12,8 @@ services:
   api:
     build: ./backend
     container_name: backend
-    # depends_on:
-    #   - postgres
+    depends_on:
+      - postgres
     ports:
       - "5002:80"
     networks:
@@ -24,12 +24,9 @@ services:
     image: postgres:18
     container_name: postgres
     volumes: 
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
     environment:
       - POSTGRES_PASSWORD=passord
-    # uncomment following lines to access db locally
-    # ports:
-    #   - 5432:5432
     networks: 
      - network-backend
     restart: unless-stopped
