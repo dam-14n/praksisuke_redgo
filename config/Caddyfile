@@ -1,0 +1,9 @@
+{
+    auto_https off
+}
+
+:80 {
+    reverse_proxy /api/* backend:5002
+    root * /static
+    file_server
+}

@@ -1,0 +1,30 @@
+//devcontainer.json
+{
+  "name": "REDGO Backend",
+
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "dockerFile": "./Dockerfile",
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+
+  "customizations": {
+    "vscode": {
+      "settings": {},
+      "extensions": ["streetsidesoftware.code-spell-checker"]
+    }
+  },
+
+  // "forwardPorts": [3000],
+
+  "portsAttributes": {
+    "5001": {
+      "label": "REDGO Backend",
+      "onAutoForward": "notify"
+    }
+  }
+
+  // "postCreateCommand": "yarn install"
+
+  // "remoteUser": "root"
+}
