@@ -7,7 +7,9 @@ const validate =
     try {
       schema.parse({
         body: req.body,
-        type: req.query.type,
+        type: req.params.type,
+        params: req.params,
+        query: req.query,
       });
       next();
     } catch (error: any) {

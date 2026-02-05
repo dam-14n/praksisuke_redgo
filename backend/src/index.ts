@@ -4,9 +4,9 @@ import { db } from "./database.js";
 import "dotenv/config";
 
 const app = express();
-const PORT = 80;
+const PORT = 5002;
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-    routes(app);
-})
+  console.log(`Server is running on port ${PORT}`);
+  routes(app);
+});

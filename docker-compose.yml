@@ -1,11 +1,16 @@
 services:
-  web:
-    build: ./frontend
-    container_name: frontend
-    depends_on:
-      - api
+  caddy:
+    image: caddy:2
+    container_name: caddy
     ports:
       - "80:80"
+    volumes:
+      - ./config/:/etc/caddy/
+      - caddy_data:/data
+      - caddy_config:/config
+      - ./frontend/:/static/
+    depends_on:
+      - api
     networks:
       - network-backend
     restart: unless-stopped
@@ -15,7 +20,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "5002:80"
+      - "5002:5002"
     networks:
      - network-backend
     restart: unless-stopped
@@ -36,3 +41,5 @@ networks:
 
 volumes: 
   postgres_data:
+  caddy_data:
+  caddy_config:
