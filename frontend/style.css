@@ -101,3 +101,11 @@ tr:nth-child(even) {
     color: white;
     border-radius: 20px;
 }
+
+.knappelapp {
+    display: flex;
+}
+
+.overskrift {
+    margin-left: 286px;
+}
