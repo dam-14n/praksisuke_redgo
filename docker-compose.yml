@@ -1,0 +1,45 @@
+services:
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    ports:
+      - "80:80"
+    volumes:
+      - ./config/:/etc/caddy/
+      - caddy_data:/data
+      - caddy_config:/config
+      - ./frontend/:/static/
+    depends_on:
+      - api
+    networks:
+      - network-backend
+    restart: unless-stopped
+  api:
+    build: ./backend
+    container_name: backend
+    depends_on:
+      - postgres
+    ports:
+      - "5002:5002"
+    networks:
+     - network-backend
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:18
+    container_name: postgres
+    volumes: 
+      - postgres_data:/var/lib/postgresql
+    environment:
+      - POSTGRES_PASSWORD=passord
+    networks: 
+     - network-backend
+    restart: unless-stopped
+
+networks:
+  network-backend:
+
+volumes: 
+  postgres_data:
+  caddy_data:
+  caddy_config:

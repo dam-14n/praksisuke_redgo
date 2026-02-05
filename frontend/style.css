@@ -4,7 +4,7 @@ body {
 }
 
 .navbar_cont {
-    background-color:#EA3C3A;
+    background-color: red;
     display: flex;
     height: 6rem;
     align-items: center;
@@ -66,12 +66,38 @@ input {
     display: flex;
     justify-content: center;
     height: 600px;
-    background-color: gray;
-    width: 67%;
+    background-color: red;
+    width: 61%;
     color: white;
     border-radius: 2rem;
 }
 
-tr {
+.tabell {
     display: flex;
+    border-radius: 2rem;
+    background-color: gray;
+    margin: 20px;
+    font-size: 40px;
+    padding: 20px;
+    line-height: 3rem;
+    color: black;
+    outline: solid red 5px;
+}
+
+td, th {
+    padding-left: 20px;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+.innmeld {
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    width: 150px;
+    font-size: 30px;
+    color: white;
+    border-radius: 20px;
 }

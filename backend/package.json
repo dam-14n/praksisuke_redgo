@@ -1,0 +1,29 @@
+{
+    "name": "redgo-backend",
+    "version": "1.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+        "build": "tsc",
+        "start": "node src/index.js"
+    },
+    "dependencies": {
+        "body-parser": "^2.2.2",
+        "dotenv": "^17.2.3",
+        "express": "^5.2.1",
+        "kysely": "^0.28.11",
+        "pg": "^8.18.0",
+        "zod": "^4.3.6"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.6",
+        "@types/node": "^25.2.0",
+        "@types/pg": "^8.16.0",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.9.3"
+    }
+}
