@@ -59,6 +59,8 @@ img {
     background-color: rgb(189, 189, 189);
     width: 700px;
     height: 700px;
+    display: flex;
+    justify-content: center;
 }
 
 .rød {
@@ -67,6 +69,10 @@ img {
 
 .kontaktinfo {
     font-size: larger;
+    background-color: aqua;
+    width: 600px;
+    height: 250px;
+    margin-top: 15px;
 }
 
 .veihjelp {
