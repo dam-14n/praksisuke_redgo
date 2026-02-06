@@ -1,160 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Meld inn</title>
     <link rel="stylesheet" href="sendinn.css">
 </head>
+
 <body>
 
     <div class="navbar_cont">
         <div class="navbar">
-            <div>
-                <a href="index.html"><img src="image-removebg-preview (2).png" alt="logo"></a>
+            <a href="index.html">
+                <img src="image-removebg-preview (2).png" alt="logo">
+            </a>
+            <div class="nav">
+                <a href="index.html">Forside</a>
+                <a href="kontaktoss.html">Kontakt oss</a>
             </div>
-                <div class="nav">
-                    <a href="index.html">Forside</a>
-                    <a href="kontaktoss.html">Kontakt oss</a>
-                </div>
         </div>
     </div>
 
-    <div class="overskrift">
-        <h1>Meld inn</h1>
-    </div>
-
+    <h1 class="overskrift">Meld inn</h1>
 
     <div class="container">
-        <div class="kategori">
-            <b>Registrer</b>
-        </div>
         <div class="box">
-            <div class="knapp">
-                <details>
-                    <summary>Gjenstand</summary>
-                    <div class="gjenstand">
-                        <div class="liste">
-                            <input type="checkbox">
-                            <p>Last</p>
-                        </div>
-                        <div class="liste">
-                            <input type="checkbox">
-                            <p>Teiner</p>
-                        </div>
-                        <div class="skriv">
-                            <p>Annet:</p>
-                            <input type="text" placeholder="skriv her">
-                        </div>
-                    </div>
-                </details>
-            </div>
 
-            <div class="knapp">
-                <details>
-                    <summary>Kjøretøy</summary>
-                    <div class="kjøretøy">
-                        <div class="liste">
-                            <input type="checkbox">
-                            <p>Bil</p>
-                        </div>
-                        <div class="liste">
-                            <input type="checkbox">
-                            <p>Lastebil</p>
-                        </div>
-                        <div class="liste">
-                            <input type="checkbox">
-                            <p>Motorsykkel</p>
-                        </div>
-                        <div class="liste">
-                            <input type="checkbox">
-                            <p>Moped</p>
-                        </div>
-                        <div class="liste">
-                            <input type="checkbox">
-                            <p>Sykkel</p>
-                        </div>
-                        <div class="skriv">
-                            <p>Annet:</p>
-                            <input type="text" placeholder="skriv her">
-                        </div>
-                    </div>
+            <details class="knapp">
+                <summary>Gjenstand</summary>
+                <div class="gjenstand">
 
-                    <div class="regnummer">
-                        <p>Registreringsnummer:</p>
-                         <input type="text" placeholder="skriv her">
-                        <p>Merke/Modell:</p>
-                         <input type="text" placeholder="skriv her">
-                        <p>Farge:</p>
-                         <input type="text" placeholder="skriv her">
-                        <p>Tilstand:</p>
-                        <input type="text" placeholder="skriv her">
-                    </div>
-                </details>
-            </div>
-            
-            
-            
-            <div class="knapp">
-                <details>
-                <summary>Dyr</summary>
-                    <div class="dyr">
-                        <div class="liste">
-                            <input type="checkbox">
-                            <p>Hund</p>
-                        </div>
-                        <div class="liste">
-                            <input type="checkbox">
-                            <p>Katt</p>
-                        </div>
-                        <div class="liste">
-                            <input type="checkbox">
-                            <p>Rådyr</p>
-                        </div>
-                        <div class="liste">
-                            <input type="checkbox">
-                            <p>Hare</p>
-                        </div>
-                        <div class="liste">
-                            <input type="checkbox">
-                            <p>Elg</p>
-                        </div>
-                        <div class="skriv">
-                            <p>Annet:</p>
-                            <input type="text" placeholder="skriv her">
-                        </div>
+                    <label><input type="checkbox" value="Last"> Last</label>
+                    <label><input type="checkbox" value="Teiner"> Teiner</label>
 
-                        <div class="info">
-                            <p>Art/Rase:</p>
-                             <input type="text" placeholder="skriv her">
-                             <p>Kjønn:</p>
-                            <div class="liste">
-                                <input type="checkbox">
-                                <p>Hankjønn</p>
-                            </div>
-                            <div class="liste">
-                                <input type="checkbox">
-                                <p>Hunkjønn</p>
-                            </div>
-                            <div class="liste">
-                                <input type="checkbox">
-                                <p>Usikkert</p>
-                            </div>
-                        </div>
-                    </div>
-                </details>
-            </div>
+                    <input type="text" id="gjenstandOther" placeholder="Annet">
 
-            <div class="sknapp">
-                <div class="sendknapp">
-                    <p>Send inn</p>
                 </div>
-            </div>
+            </details>
+
+            <details class="knapp">
+                <summary>Kjøretøy</summary>
+                <div class="kjøretøy">
+
+                    <label><input type="checkbox" value="Bil"> Bil</label>
+                    <label><input type="checkbox" value="Lastebil"> Lastebil</label>
+                    <label><input type="checkbox" value="Motorsykkel"> Motorsykkel</label>
+                    <label><input type="checkbox" value="Moped"> Moped</label>
+                    <label><input type="checkbox" value="Sykkel"> Sykkel</label>
+
+                    <input type="text" id="kjoretoyOther" placeholder="Annet">
+
+                </div>
+
+                <div class="regnummer">
+                    <input id="regnr" placeholder="Registreringsnummer">
+                    <input id="modell" placeholder="Merke/Modell">
+                    <input id="farge" placeholder="Farge">
+                    <input id="tilstand" placeholder="Tilstand">
+                </div>
+            </details>
+
+            <details class="knapp">
+                <summary>Dyr</summary>
+                <div class="dyr">
+
+                    <label><input type="checkbox" value="Hund"> Hund</label>
+                    <label><input type="checkbox" value="Katt"> Katt</label>
+                    <label><input type="checkbox" value="Rådyr"> Rådyr</label>
+                    <label><input type="checkbox" value="Hare"> Hare</label>
+                    <label><input type="checkbox" value="Elg"> Elg</label>
+
+                    <input type="text" id="dyrOther" placeholder="Annet">
+
+                    <div class="info">
+                        <input id="rase" placeholder="Art/Rase">
+
+                        <label><input type="radio" name="kjonn" value="Hankjønn"> Hankjønn</label>
+                        <label><input type="radio" name="kjonn" value="Hunkjønn"> Hunkjønn</label>
+                        <label><input type="radio" name="kjonn" value="Usikkert"> Usikkert</label>
+                    </div>
+
+                </div>
+            </details>
+
+            <button id="sendBtn">Send inn</button>
+
         </div>
     </div>
-</body>
-</html>
 
+    <script src="sendinn.js"></script>
 </body>
-<script href="sendinn.js"></script>
+
 </html>
