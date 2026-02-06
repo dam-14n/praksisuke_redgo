@@ -56,7 +56,29 @@ img {
 }
 
 .box {
-    background-color: gray;
+    background-color: rgb(189, 189, 189);
     width: 700px;
     height: 700px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.rød {
+    color: red;
+}
+
+.kontaktinfo {
+    font-size: larger;
+    background-color: white;
+    width: 600px;
+    height: 250px;
+    margin-top: 15px;
+    border-radius: 10px;
+    justify-content: baseline;
+    padding: 15px;
+}
+
+.veihjelp {
+    font-size: 1.5rem;
 }

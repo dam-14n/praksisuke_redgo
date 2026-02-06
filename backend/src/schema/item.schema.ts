@@ -11,7 +11,7 @@ import {
 } from "zod";
 
 const datetime = z.iso.datetime;
-const numberFromString = z.coerce.number();
+const numberFromString = z.string().regex(/^\d+$/);
 const itemTypeEnum = z.enum(["goods", "car", "animal"]);
 
 const payloadAll = {
