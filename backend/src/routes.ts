@@ -43,7 +43,6 @@ function routes(app: Express) {
   app.get(
     "/api/items/:type/:id",
     [validate(getItemSchema)],
-    //
     (req: Request, res: Response) =>
       getItemHandler(req as unknown as Request<GetItemInput["params"]>, res),
   );
