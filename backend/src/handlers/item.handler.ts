@@ -15,14 +15,14 @@ function verifyResult(result: any, response: Response) {
   }
 }
 
-function generateFilterStrings(filterList: GetItemListInput["query"]) {
-  let whereStatements: [string, string][] = [];
-  for (const filterKey in filterList) {
-    const filterValue =
-      filterList[filterKey as keyof GetItemListInput["query"]];
-    whereStatements.push([filterKey, filterValue]);
-  }
-  return whereStatements;
+// make all valeues of an object be lowercase
+function valuesToLower(filterList: GetItemListInput["query"]) {
+  const entries = Object.entries(filterList as Record<string, any>);
+  const lowercasedEntries = entries.map(([key, value]) => [
+    key,
+    typeof value === "string" ? value.toLowerCase() : value,
+  ]);
+  return Object.fromEntries(lowercasedEntries);
 }
 
 export async function getItemHandler(
@@ -48,25 +48,32 @@ export async function getItemListHandler(
 ) {
   try {
     const itemTypes: ("car" | "animal" | "goods")[] = [];
-    let queryFilters = req.query;
+    let queryFilters = {};
 
     if ("type" in req.query) {
       // validator middleware already ensures that this is a valid type
       itemTypes.push(req.query.type as "car" | "animal" | "goods");
       const { type, ...rest } = req.query;
-      queryFilters = rest;
+      queryFilters = valuesToLower(rest);
     } else {
       itemTypes.push("car", "animal", "goods");
+      queryFilters = valuesToLower(req.query);
     }
-    const whereStatements = generateFilterStrings(queryFilters);
 
     const results: { [key: string]: any[] } = {};
     // loop through item types and execute query for each type, then combine results
     for (const itemType of itemTypes) {
       let query = db.selectFrom(itemType);
-      for (const [column, value] of whereStatements) {
-        query.where(column as any, "=", value);
+
+      // case-insensitive filters
+      for (const [column, value] of Object.entries(queryFilters)) {
+        query = query.where(
+          (eb) => eb.fn("lower", [eb.ref(column as any)]),
+          "=",
+          value,
+        );
       }
+
       let result = await query.selectAll().execute();
       results[itemType] = result;
       console.log(`Query for ${itemType} returned ${result.length} results`);
