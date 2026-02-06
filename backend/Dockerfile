@@ -1,5 +1,3 @@
-ARG PORT=5001
-
 # Install all dependencies
 FROM node:25-alpine AS base
 WORKDIR /app

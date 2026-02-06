@@ -17,10 +17,16 @@ services:
   api:
     build: ./backend
     container_name: backend
+    env_file:
+      - ./backend/.env
     depends_on:
       - postgres
+    expose:
+      - $PORT
     ports:
-      - "5002:5002"
+      - 5002:$PORT
+    volumes:
+      - ./backend/migrations/:/app/migrations/
     networks:
      - network-backend
     restart: unless-stopped
