@@ -76,6 +76,7 @@ input {
     display: flex;
     border-radius: 2rem;
     background-color: gray;
+    background-color: rgb(189, 189, 189);
     margin: 20px;
     font-size: 40px;
     padding: 20px;
