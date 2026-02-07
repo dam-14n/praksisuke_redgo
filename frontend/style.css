@@ -63,34 +63,53 @@ input {
 }
 
 .liste {
-    display: flex;
-    justify-content: center;
-    height: 600px;
-    background-color: red;
-    width: 61%;
+    display: block;
+    width: 90%;
+    margin: 0 auto 2rem auto;
+    background-color: transparent;
     color: white;
-    border-radius: 2rem;
 }
 
 .tabell {
-    display: flex;
-    border-radius: 2rem;
+    width: 100%;
+    border-radius: 1.5rem;
     background-color: gray;
-    background-color: rgb(189, 189, 189);
-    margin: 20px;
-    font-size: 40px;
-    padding: 20px;
-    line-height: 3rem;
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.6rem;
     color: black;
     outline: solid red 5px;
+    border-collapse: collapse;
+    display: table;
+    table-layout: fixed;
 }
 
-td, th {
-    padding-left: 20px;
+.tabell thead {
+    background: #e5e5e5;
+    display: table-header-group;
 }
 
-tr:nth-child(even) {
-    background-color: white;
+.tabell tbody {
+    display: table-row-group;
+}
+
+.tabell tr {
+    display: table-row;
+}
+
+.tabell th,
+.tabell td {
+    display: table-cell;
+}
+
+.tabell th, .tabell td {
+    padding: 14px 16px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.tabell tr:nth-child(even) {
+    background-color: #f7f7f7;
 }
 
 .innmeld {
@@ -116,3 +135,51 @@ tr:nth-child(even) {
     color: white;
 }
 
+/* Status styling */
+.checked-out {
+    color: green;
+    font-weight: bold;
+}
+
+.not-checked-out {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+/* Table row hover effect */
+.tabell tbody tr:hover {
+    background-color: #e0e0e0 !important;
+    cursor: pointer;
+}
+
+/* Modal styling */
+.modal {
+    font-family: Arial, sans-serif;
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.modal p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.modal hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+    .tabell {
+        font-size: 20px;
+    }
+    
+    td, th {
+        padding-left: 10px;
+    }
+}

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meld inn</title>
+    <title>Meld inn gjenstand</title>
     <link rel="stylesheet" href="sendinn.css">
 </head>
 
@@ -22,74 +21,120 @@
         </div>
     </div>
 
-    <h1 class="overskrift">Meld inn</h1>
+    <div class="overskrift">
+        <h1>Meld inn</h1>
+    </div>
 
     <div class="container">
-        <div class="box">
-
-            <details class="knapp">
-                <summary>Gjenstand</summary>
-                <div class="gjenstand">
-
-                    <label><input type="checkbox" value="Last"> Last</label>
-                    <label><input type="checkbox" value="Teiner"> Teiner</label>
-
-                    <input type="text" id="gjenstandOther" placeholder="Annet">
-
-                </div>
-            </details>
-
-            <details class="knapp">
-                <summary>Kjøretøy</summary>
-                <div class="kjøretøy">
-
-                    <label><input type="checkbox" value="Bil"> Bil</label>
-                    <label><input type="checkbox" value="Lastebil"> Lastebil</label>
-                    <label><input type="checkbox" value="Motorsykkel"> Motorsykkel</label>
-                    <label><input type="checkbox" value="Moped"> Moped</label>
-                    <label><input type="checkbox" value="Sykkel"> Sykkel</label>
-
-                    <input type="text" id="kjoretoyOther" placeholder="Annet">
-
-                </div>
-
-                <div class="regnummer">
-                    <input id="regnr" placeholder="Registreringsnummer">
-                    <input id="modell" placeholder="Merke/Modell">
-                    <input id="farge" placeholder="Farge">
-                    <input id="tilstand" placeholder="Tilstand">
-                </div>
-            </details>
-
-            <details class="knapp">
-                <summary>Dyr</summary>
-                <div class="dyr">
-
-                    <label><input type="checkbox" value="Hund"> Hund</label>
-                    <label><input type="checkbox" value="Katt"> Katt</label>
-                    <label><input type="checkbox" value="Rådyr"> Rådyr</label>
-                    <label><input type="checkbox" value="Hare"> Hare</label>
-                    <label><input type="checkbox" value="Elg"> Elg</label>
-
-                    <input type="text" id="dyrOther" placeholder="Annet">
-
-                    <div class="info">
-                        <input id="rase" placeholder="Art/Rase">
-
-                        <label><input type="radio" name="kjonn" value="Hankjønn"> Hankjønn</label>
-                        <label><input type="radio" name="kjonn" value="Hunkjønn"> Hunkjønn</label>
-                        <label><input type="radio" name="kjonn" value="Usikkert"> Usikkert</label>
-                    </div>
-
-                </div>
-            </details>
-
-            <button id="sendBtn">Send inn</button>
-
+        <div class="kategori">
+            <b>Velg type</b>
         </div>
+        
+        <div class="type-selector">
+            <button type="button" class="type-btn" data-type="goods">Gjenstand</button>
+            <button type="button" class="type-btn" data-type="car">Kjøretøy</button>
+            <button type="button" class="type-btn" data-type="animal">Dyr</button>
+        </div>
+
+        <form id="itemForm" style="display: none;">
+            <!-- Common fields for all types -->
+            <div class="form-section">
+                <h3>Grunnleggende informasjon</h3>
+                
+                <div class="form-group">
+                    <label for="checkin_date">Innsjekkingsdato og tid *</label>
+                    <input type="datetime-local" id="checkin_date" name="checkin_date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ref_number">Referansenummer *</label>
+                    <input type="text" id="ref_number" name="ref_number" required placeholder="f.eks. BIL-2026-001">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact_person">Kontaktperson *</label>
+                    <input type="text" id="contact_person" name="contact_person" required placeholder="f.eks. Ola Nordmann">
+                </div>
+                
+                <div class="form-group">
+                    <label for="storage_location">Lagringssted *</label>
+                    <input type="text" id="storage_location" name="storage_location" required placeholder="f.eks. Lager A, Seksjon 3">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Beskrivelse *</label>
+                    <textarea id="description" name="description" required rows="3" placeholder="Beskriv gjenstanden..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="photo_url">Foto URL (valgfritt)</label>
+                    <input type="url" id="photo_url" name="photo_url" placeholder="https://example.com/photo.jpg">
+                </div>
+            </div>
+
+            <!-- Car specific fields -->
+            <div id="carFields" class="form-section" style="display: none;">
+                <h3>Kjøretøyinformasjon</h3>
+                
+                <div class="form-group">
+                    <label for="registration_number">Registreringsnummer *</label>
+                    <input type="text" id="registration_number" name="registration_number" placeholder="f.eks. AB12345">
+                </div>
+                
+                <div class="form-group">
+                    <label for="make_model">Merke/Modell *</label>
+                    <input type="text" id="make_model" name="make_model" placeholder="f.eks. Toyota Camry">
+                </div>
+                
+                <div class="form-group">
+                    <label for="color">Farge *</label>
+                    <input type="text" id="color" name="color" placeholder="f.eks. Rød">
+                </div>
+                
+                <div class="form-group">
+                    <label for="condition">Tilstand *</label>
+                    <input type="text" id="condition" name="condition" placeholder="f.eks. Ingen synlige skader">
+                </div>
+            </div>
+
+            <!-- Animal specific fields -->
+            <div id="animalFields" class="form-section" style="display: none;">
+                <h3>Dyrinformasjon</h3>
+                
+                <div class="form-group">
+                    <label for="species">Art/Rase *</label>
+                    <input type="text" id="species" name="species" placeholder="f.eks. Katt, Hund, Elg">
+                </div>
+                
+                <div class="form-group">
+                    <label>Kjønn *</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="sex" value="male" required> Hankjønn</label>
+                        <label><input type="radio" name="sex" value="female"> Hunkjønn</label>
+                        <label><input type="radio" name="sex" value="unknown"> Ukjent</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="markings">Kjennetegn *</label>
+                    <input type="text" id="markings" name="markings" placeholder="f.eks. Hvit flekk på brystet">
+                </div>
+                
+                <div class="form-group">
+                    <label for="special_needs">Spesielle behov *</label>
+                    <textarea id="special_needs" name="special_needs" required rows="3" placeholder="Beskriv spesielle behov eller merknader..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">Send inn</button>
+                <button type="button" class="cancel-btn" onclick="window.location.href='index.html'">Avbryt</button>
+            </div>
+        </form>
     </div>
 
     <script src="sendinn.js"></script>
-</body>
 
+    <script src="sendinn.js"></script>
+</body>
 </html>
